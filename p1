@@ -1,0 +1,21 @@
+enum oe : Error{
+  case noNegative
+}
+func fun(a: Int) throws {
+  if a>0 {
+    if(a%2==0){
+      print((a),"is even")
+    }else{
+      print((a)," is odd")
+    }
+  }
+  else{
+    throw oe.noNegative
+  }  
+}
+do{
+  try fun(a:3)
+}
+  catch let error{
+    print("Error: \(error)")
+}
